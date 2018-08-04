@@ -1,0 +1,1099 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title> Online Shopping for Women, Men, Kids Fashion & Lifestyle - Myntra </title>
+		<link rel="icon" href="images/myntra-icon.png">
+		<link rel="stylesheet" href="lib/css/bootstrap.css">
+		<link rel="stylesheet" href="lib/css/style.css">
+		<link rel="stylesheet" href="lib/css/font-awesome.css">
+		<script src = "lib/js/angular.js"></script>
+		<script src = "lib/js/angular-animate.js"></script>
+		<script src = "lib/js/my_Javscript.js"></script>
+		<script src="lib/js/jquery.min.js"></script>
+		<script src="lib/js/bootstrap.js"></script>
+		
+		<style>
+			
+			@font-face {
+			font-family: 'Whitney';
+			src: url('lib/fonts/WhitneyHTF-Book.eot');
+			src: url('lib/fonts/WhitneyHTF-Book.eot?#iefix') format('embedded-opentype'),
+			  url('lib/fonts/WhitneyHTF-Book.woff') format('woff'),
+			  url('lib/fonts/WhitneyHTF-Book.ttf') format('truetype');
+			font-weight: 400;
+			font-style: normal;
+		  }
+
+			@font-face {
+			font-family: 'Whitney';
+			src: url('lib/fonts/WhitneyHTF-SemiBold.eot');
+			src: url('lib/fonts/WhitneyHTF-SemiBold.eot?#iefix') format('embedded-opentype'),
+			  url('lib/fonts/WhitneyHTF-SemiBold.woff') format('woff'),
+			  url('lib/fonts/WhitneyHTF-SemiBold.ttf') format('truetype');
+			font-weight: 500;
+			font-style: normal;
+		  }
+  
+		</style>
+	</head>
+	<body ng-app="myApp">
+		<header>
+			<div id="header-div">
+				<div class="desktop-preHeaderContent desktop-showBanner" data-reactid="4">
+					<a class="desktop-preHeaderLinks" href="/giftcard" data-reactid="5">
+						<!--  6 -->Gift Cards
+						<span class="desktop-superscriptTag" data-reactid="7"> New </span>
+					</a>
+					<a class="desktop-preHeaderLinks" href="/my/orders" data-reactid="8">
+						<!--  9 -->Track Orders
+					</a>
+					<a class="desktop-preHeaderLinks" href="/contactus" data-reactid="10">
+						<!--  11 -->Contact Us</a>
+				</div>
+			</div>
+		</header>
+<!-------------------- myCtrl Start------------------------------------------->
+		<div ng-controller="myCtrl">
+		<div class="container menu-bar-index">
+			<nav class="navbar navbar-default my-nav " role="navigation">
+			  <!-- Brand and toggle get grouped for better mobile display -->
+			  <div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				  <span class="sr-only">Toggle navigation</span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				</button>
+				<a href="index.html"><img src="myntra_logo.png" height="50px" width="100px"></a>
+			  </div>
+
+			  <!-- Collect the nav links, forms, and other content for toggling -->
+			  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav"><!--
+				  <li class="active"><a href="#">Link</a></li>-->
+				   <li ng-mouseover="men_open()" ng-mouseleave="men_close()" ><a ng-style="men_menu_border" class="men" href="mens_shopping.html" >Men</a></li>
+					<li ng-mouseover="women_open()" ng-mouseleave="women_close()" ><a ng-style="women_menu_border" class="women" href="women_shopping.html" >Women</a></li>
+					<li ng-mouseover="kids_open()" ng-mouseleave="kids_close()" ><a ng-style="kids_menu_border" class="kids" href="kids_shopping.html">Kids</a></li>
+					<li ng-mouseover="home_and_living_open()" ng-mouseleave="home_and_living_close()" ><a ng-style="home_menu_border" class="home-living" href="home_leaving_shopping.html">Home&Living </a></li>
+					<li>
+					<form class="navbar-form" autocomplete="off">
+							<div class="input-group add-on autocomplete">
+							<input class="form-control srch-term" ng-keyup="search()" ng-model="search_key" placeholder="Search" name="myCountry" id="myInput" onkeyup="myFunction()" type="text">
+							<div class="input-group-btn">
+								<button class="btn btn-default"  type="submit"><i class="glyphicon glyphicon-search"></i></button>
+							</div>
+							</div>
+					</form>
+					</li>
+					<li ng-mouseover="user_login_open()" ng-mouseleave="user_login_close()"><a ng-style="user_menu_border" class="menu-border" href="#about"><i class="fa fa-user fa-2x" style="color-lightgray;" aria-hidden="true"></i>  <i class="fa fa-sort-desc" aria-hidden="true"></i> </a></li>
+					<li><a class="menu-border" href="#about"><i class="fa fa-shopping-bag fa-2x" style="color-lightgray;" aria-hidden="true"></i>  </a></li>
+					
+				</ul>
+			 <!-- ORIGINAL SEARCH FORM    
+				<div class="col-sm-3 col-md-3">
+					<form class="navbar-form" role="search">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search" name="q">
+						<div class="input-group-btn">
+							<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+						</div>
+					</div>
+					</form>
+				</div>
+				-->
+				
+			  </div><!-- /.navbar-collapse -->
+			</nav>
+			<!-- Nav-end-->
+			</div>
+			<div class="user-account-menu menu-categories-show-hide container drop-menu-container" ng-show="user_login_div" ng-mouseover="user_login_open()" ng-mouseleave="user_login_close()" >
+				<h4>Your Account</h4>
+				<p>Access account and manage orders</p>
+				<button type="button"  class="btn user-btn"> SIGN UP </button>
+				<button type="button" 	class="btn user-btn"> LOGIN </button>
+			</div>
+			<div class="user-account-menu search-box menu-categories-show-hide container drop-menu-container" ng-show="search_box_show" >
+				<ul class="search-item-list" id="item-list">
+				  <li><a class="categories-top-menu" href="#">Makeup  </a></li>
+				  <li><a class="categories-top-menu" href="#">Dresses For Girls</a></li>
+				  <li><a class="categories-top-menu" href="#">T-Shirts  </a></li>
+				  <li><a class="categories-top-menu" href="#">Sandals  </a></li>
+				  <li><a class="categories-top-menu" href="#">Headphones  </a></li>
+				  <li><a class="categories-top-menu" href="#">Baby Dolls  </a></li>
+				  <li><a class="categories-top-menu" href="#">Blazers For Men  </a></li>
+				  <li><a class="categories-top-menu" href="#">Handbags  </a></li>
+				  <li><a class="categories-top-menu" href="#">Ladies Watches  </a></li>
+				  <li><a class="categories-top-menu" href="#">One Piece Dress  </a></li>
+				  <li><a class="categories-top-menu" href="#">Bags  </a></li>
+				  <li><a class="categories-top-menu" href="#">Sport Shoes </a></li>
+				  <li><a class="categories-top-menu" href="#">Reebok Shoes  </a></li>
+				  <li><a class="categories-top-menu" href="#">Puma Shoes  </a></li>
+				  <li><a class="categories-top-menu" href="#">Boxers  </a></li>
+				  <li><a class="categories-top-menu" href="#">Wallets  </a></li>
+				  <li><a class="categories-top-menu" href="#">Tops  </a></li>
+				  <li><a class="categories-top-menu" href="#">Earrings  </a></li>
+				  <li><a class="categories-top-menu" href="#">Fastrack Watches </a></li>
+				  <li><a class="categories-top-menu" href="#">Kurtis  </a></li>
+				  <li><a class="categories-top-menu" href="#">Nike  </a></li>
+				  <li><a class="categories-top-menu" href="#">Smart Watches  </a></li>
+				  <li><a class="categories-top-menu" href="#">Titan Watches  </a></li>
+				  <li><a class="categories-top-menu" href="#">Designer Blouse  </a></li>
+				  <li><a class="categories-top-menu" href="#">Gowns Rings  </a></li>
+				  <li><a class="categories-top-menu" href="#">Shoes For Men  </a></li>
+				  <li><a class="categories-top-menu" href="#">Forever 21  Toys </a></li>
+				  <li><a class="categories-top-menu" href="#">Photo Frames  </a></li>
+				  <li><a class="categories-top-menu" href="#">Punjabi Suits  </a></li>
+				  <li><a class="categories-top-menu" href="#">Bikini  </a></li>
+				  <li><a class="categories-top-menu" href="#">Lipstick  </a></li>
+				  <li><a class="categories-top-menu" href="#">Saree  </a></li>
+				  <li><a class="categories-top-menu" href="#">Watches  </a></li>
+				  <li><a class="categories-top-menu" href="#">Dresses  </a></li>
+				  <li><a class="categories-top-menu" href="#">Lehenga  </a></li>
+				  <li><a class="categories-top-menu" href="#">Nike Shoes  </a></li>
+				  <li><a class="categories-top-menu" href="#">Goggles  </a></li>
+				  <li><a class="categories-top-menu" href="#">Bras </a></li>
+				  <li><a class="categories-top-menu" href="#">Suit  </a></li>
+				  <li><a class="categories-top-menu" href="#">Chinos  Shoes  </a></li>
+				  <li><a class="categories-top-menu" href="#">Adidas Shoes  </a></li>
+				  <li><a class="categories-top-menu" href="#">Woodland Shoes  </a></li>
+				  <li><a class="categories-top-menu" href="#">Jewellery  </a></li>
+				  <li><a class="categories-top-menu" href="#">Designers Sarees </a></li>
+				  <li><a class="categories-top-menu" href="#">Nike</a>
+				  <li><a class="categories-top-menu" href="#">Puma</a>
+				  <li><a class="categories-top-menu" href="#">Adidas</a>
+				  <li><a class="categories-top-menu" href="#">Fila</a>
+				  <li><a class="categories-top-menu" href="#">Lee  United</a>
+				  <li><a class="categories-top-menu" href="#">Colors Of</a>
+				  <li><a class="categories-top-menu" href="#">Benetton  Wrangle</a>
+				  <li><a class="categories-top-menu" href="#">Fastrack</a>
+				  <li><a class="categories-top-menu" href="#">Levis  </a>
+				  <li><a class="categories-top-menu" href="#">Anarkali Dress</a>
+				  <li><a class="categories-top-menu" href="#">Mast & Harbour  </a>
+				  <li><a class="categories-top-menu" href="#">Dressberry  </a>
+				  <li><a class="categories-top-menu" href="#">Arrow  </a>
+				  <li><a class="categories-top-menu" href="#">Reebok</a>
+				  <li><a class="categories-top-menu" href="#">Hrx  </a>
+				  <li><a class="categories-top-menu" href="#">Cat  </a>
+				  <li><a class="categories-top-menu" href="#">Dhotis  </a>
+				  <li><a class="categories-top-menu" href="#">Sherwani  </a>
+				  <li><a class="categories-top-menu" href="#">Shirts  </a>
+				  <li><a class="categories-top-menu" href="#">Jackets  </a>
+				  <li><a class="categories-top-menu" href="#">Toys  </a>
+				  <li><a class="categories-top-menu" href="#">Shorts  </a>
+				  <li><a class="categories-top-menu" href="#">Shoes  </a>
+				  <li><a class="categories-top-menu" href="#">Watches  </a>
+				  <li><a class="categories-top-menu" href="#">Kurtas  </a>
+				  <li><a class="categories-top-menu" href="#">T Shirts  </a>
+				  <li><a class="categories-top-menu" href="#">Vests  </a>
+				  <li><a class="categories-top-menu" href="#">Sunglasses</a>
+				  <li><a class="categories-top-menu" href="#">Jeans  </a>
+				  <li><a class="categories-top-menu" href="#">Trousers  </a>
+				  <li><a class="categories-top-menu" href="#">Kurta Pyjama  </a>
+				  <li><a class="categories-top-menu" href="#">Wallets  </a>
+				  <li><a class="categories-top-menu" href="#">Photo Frames  </a>
+				  <li><a class="categories-top-menu" href="#">Kajal  </a>
+				  <li><a class="categories-top-menu" href="#">Nike Shoes  </a>
+				  <li><a class="categories-top-menu" href="#">Adidas Shoes  </a>
+				  <li><a class="categories-top-menu" href="#">Casual Shoes  </a>
+				  <li><a class="categories-top-menu" href="#">Sports Shoes  </a>
+				  <li><a class="categories-top-menu" href="#">Fastrack Watches </a>
+				  <li><a class="categories-top-menu" href="#">Woodland Shoes  </a>
+				  <li><a class="categories-top-menu" href="#">Converse Shoes  </a>
+				  <li><a class="categories-top-menu" href="#">Puma Shoes  </a>
+				  <li><a class="categories-top-menu" href="#">Sandals  </a>
+				  <li><a class="categories-top-menu" href="#">Running Shoes  </a>
+				  <li><a class="categories-top-menu" href="#">Footwear  </a>
+				  <li><a class="categories-top-menu" href="#">Raincoats  </a>
+				  <li><a class="categories-top-menu" href="#">Adidas  </a>
+				  <li><a class="categories-top-menu" href="#">Puma  </a>
+				  <li><a class="categories-top-menu" href="#">Fila  </a>
+				  <li><a class="categories-top-menu" href="#">Lee</a>
+				</ul>
+			</div>
+			<div class="menu-categories-show-hide container drop-menu-container" ng-show="men_menu_div" ng-mouseover="men_open()" ng-mouseleave="men_close()" >
+				<!-- men Menu Categories end-->
+				<div  class="row menu-cat" >
+					<br><br>
+					<div class="col-sm-2"></div>
+					<div class="col-sm-2">
+						
+						 
+						<ul>
+							<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#ee5f73;" href="#">Topwear  </a></li>
+							<li ><a class="categories-top-menu" href="#">T-Shirts </a></li>
+							<li ><a class="categories-top-menu" href="#">Casual Shirts </a></li>
+							<li ><a class="categories-top-menu" href="#">Formal Shirts </a></li>
+							<li ><a class="categories-top-menu" href="#">Sweaters & Sweatshirts </a></li>
+							<li ><a class="categories-top-menu" href="#">Jackets </a></li>
+							<li ><a class="categories-top-menu" href="#">Blazers & Coats </a></li>
+							<li ><a class="categories-top-menu" href="#">Suits </a></li>
+							<li ><a class="categories-top-menu" href="#">Clothing Fabric </a></li>
+						</ul>
+						<ul>
+							<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#ee5f73;" href="#">Bottomwear  </a></li>
+							<li ><a class="categories-top-menu" href="#">Jeans</a></li>
+							<li ><a class="categories-top-menu" href="#">Casual Trousers</a></li>
+							<li ><a class="categories-top-menu" href="#">Formal Trousers</a></li>
+							<li ><a class="categories-top-menu" href="#">Shorts</a></li>
+							<li ><a class="categories-top-menu" href="#">Track Pants/Joggers</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-2">
+						<ul>
+							<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#ee5f73;" href="#">Sports & Active Wear</a></li>
+							<li ><a class="categories-top-menu" href="#">Active T-Shirts</a></li>
+							<li ><a class="categories-top-menu" href="#">Track Pants & Shorts</a></li>
+							<li ><a class="categories-top-menu" href="#">Jackets & Sweatshirts</a></li>
+							<li ><a class="categories-top-menu" href="#">Swimwear</a></li>
+							<li ><a class="categories-top-menu" href="#">Smart Wearables</a></li>
+							<li ><a class="categories-top-menu" href="#">Sports Accessories</a></li>
+							<li ><a class="categories-top-menu" href="#">Sports Equipment</a></li>
+							<li ><a class="categories-top-menu" href="#">Sports Shoes</a></li>
+						</ul>
+						<ul>
+							<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#ee5f73;" href="#">Indian & Festive Wear</a></li>
+							<li ><a class="categories-top-menu" href="#">Kurtas & Kurta Sets</a></li>
+							<li ><a class="categories-top-menu" href="#">Sherwanis</a></li>
+							<li ><a class="categories-top-menu" href="#">Nehru Jackets</a></li>
+							<li ><a class="categories-top-menu" href="#">Dhoti</a></li>
+						</ul>
+						<ul>
+							<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#ee5f73;" href="#">Plus Size</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-2">
+						<ul>
+							<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#ee5f73;" href="#">Innerwear & Sleepwear</a></li>
+							<li ><a class="categories-top-menu" href="#">Briefs & Trunks</a></li>
+							<li ><a class="categories-top-menu" href="#">Boxers</a></li>
+							<li ><a class="categories-top-menu" href="#">Vests</a></li>
+							<li ><a class="categories-top-menu" href="#">Sleepwear & Loungewear</a></li>
+							<li ><a class="categories-top-menu" href="#">Thermals</a></li>
+						</ul>
+						<ul>
+							<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#ee5f73;" href="#">Footwear</a></li>
+							<li ><a class="categories-top-menu" href="#">Casual Shoes</a></li>
+							<li ><a class="categories-top-menu" href="#">Sports Shoes</a></li>
+							<li ><a class="categories-top-menu" href="#">Formal Shoes</a></li>
+							<li ><a class="categories-top-menu" href="#">Sandals & Floaters</a></li>
+							<li ><a class="categories-top-menu" href="#">Flip Flops</a></li>
+							<li ><a class="categories-top-menu" href="#">Customizable Shoes</a></li>
+							<li ><a class="categories-top-menu" href="#">Socks</a></li>
+						</ul>
+						<ul>
+							<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#ee5f73;" href="#">Watches & Wearables</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-2">
+						<ul>
+							<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#ee5f73;" href="#">Sunglasses And Frames</a></li>
+						</ul>
+						<ul>
+							<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#ee5f73;" href="#">Headphones & Speakers</a></li>
+						</ul>
+						<ul>
+							<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#ee5f73;" href="#">Bags & Backpacks</a></li>
+						</ul>
+						<ul>
+							<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#ee5f73;" href="#">Luggage & Trolleys</a></li>
+						</ul>
+						<ul>
+							<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#ee5f73;" href="#">Personal Care & Grooming</a></li>
+						</ul>
+						<ul>
+							<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#ee5f73;" href="#">Fashion Accessories</a></li>
+							<li ><a class="categories-top-menu" href="#">Wallets</a></li>
+							<li ><a class="categories-top-menu" href="#">Belts</a></li>
+							<li ><a class="categories-top-menu" href="#">Ties, Cufflinks & Pocket Squares</a></li>
+							<li ><a class="categories-top-menu" href="#">Accessory Gift Sets</a></li>
+							<li ><a class="categories-top-menu" href="#">Helmets</a></li>
+							<li ><a class="categories-top-menu" href="#">Caps & Hats</a></li>
+							<li ><a class="categories-top-menu" href="#">Mufflers, Scarves & Gloves</a></li>
+							<li ><a class="categories-top-menu" href="#">Phone Cases</a></li>
+							<li ><a class="categories-top-menu" href="#">Travel Accessories</a></li>
+							<li ><a class="categories-top-menu" href="#">Rings & Wristwear</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+			<!-- men Menu Categories end-->
+			
+			<!-- Women Menu Categories start-->
+			<div class="menu-categories-show-hide container drop-menu-container" ng-show="women_menu_div" ng-mouseover="women_open()" ng-mouseleave="women_close()" >
+					<div  class="row menu-cat" >
+						<br><br>
+						<div class="col-sm-2"></div>
+						<div class="col-sm-2">
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#fb56c1;" href="#">Indian & Fusion Wear</a></li>
+								<li ><a class="categories-top-menu" href="#">Kurtas & Suits</a></li>
+								<li ><a class="categories-top-menu" href="#">Kurtis, Tunics & Tops</a></li>
+								<li ><a class="categories-top-menu" href="#">Ethnic Dresses</a></li>
+								<li ><a class="categories-top-menu" href="#">Leggings, Salwars, Churidars</a></li>
+								<li ><a class="categories-top-menu" href="#">Skirts & Palazzos</a></li>
+								<li ><a class="categories-top-menu" href="#">Sarees & Blouses</a></li>
+								<li ><a class="categories-top-menu" href="#">Dress Material</a></li>
+								<li ><a class="categories-top-menu" href="#">Lehenga Choli</a></li>
+								<li ><a class="categories-top-menu" href="#">Dupattas & Shawls</a></li>
+								<li ><a class="categories-top-menu" href="#">Jackets & Waistcoats</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#fb56c1;" href="#">Western Wear</a></li>
+								<li ><a class="categories-top-menu" href="#">Dresses & Jumpsuits</a></li>
+								<li ><a class="categories-top-menu" href="#">Tops, T-Shirts & Shirts</a></li>
+								<li ><a class="categories-top-menu" href="#">Jeans & Jeggings</a></li>
+								<li ><a class="categories-top-menu" href="#">Trousers & Capris</a></li>
+								<li ><a class="categories-top-menu" href="#">Shorts & Skirts</a></li>
+								<li ><a class="categories-top-menu" href="#">Shrugs</a></li>
+								<li ><a class="categories-top-menu" href="#">Sweaters & Sweatshirts</a></li>
+								<li ><a class="categories-top-menu" href="#">Jackets & Waistcoats</a></li>
+								<li ><a class="categories-top-menu" href="#">Coats & Blazers</a></li>
+							</ul>
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#fb56c1;" href="#">Lingerie & Sleepwear</a></li>
+								<li ><a class="categories-top-menu" href="#">Bras & Lingerie Sets</a></li>
+								<li ><a class="categories-top-menu" href="#">Briefs</a></li>
+								<li ><a class="categories-top-menu" href="#">Shapewear</a></li>
+								<li ><a class="categories-top-menu" href="#">Sleepwear & Loungewear</a></li>
+								<li ><a class="categories-top-menu" href="#">Swimwear</a></li>
+								<li ><a class="categories-top-menu" href="#">Camisoles & Thermals</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#fb56c1;" href="#">Footwear</a></li>
+								<li ><a class="categories-top-menu" href="#">Flats & Casual Shoes</a></li>
+								<li ><a class="categories-top-menu" href="#">Heels</a></li>
+								<li ><a class="categories-top-menu" href="#">Boots</a></li>
+								<li ><a class="categories-top-menu" href="#">Sports Shoes & Floaters</a></li>
+							</ul>
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#fb56c1;" href="#">Sports & Active Wear</a></li>
+								<li ><a class="categories-top-menu" href="#">Clothing</a></li>
+								<li ><a class="categories-top-menu" href="#">Footwear</a></li>
+								<li ><a class="categories-top-menu" href="#">Sports Accessories</a></li>
+								<li ><a class="categories-top-menu" href="#">Sports Equipment</a></li>
+							</ul>
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#fb56c1;" href="#">Handbags, Bags & Wallets</a></li>
+							</ul>
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#fb56c1;" href="#">Watches & Wearables</a></li>
+							</ul>
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#fb56c1;" href="#">Sunglasses And Frames</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#fb56c1;" href="#">Headphones & Speakers</a></li>
+							</ul>
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#fb56c1;" href="#">Luggage & Trolleys</a></li>
+							</ul>
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#fb56c1;" href="#">Beauty & Personal Care</a></li>
+								<li ><a class="categories-top-menu" href="#">Makeup</a></li>
+								<li ><a class="categories-top-menu" href="#">Skincare</a></li>
+								<li ><a class="categories-top-menu" href="#">Premium Beauty</a></li>
+								<li ><a class="categories-top-menu" href="#">Fragrances</a></li>
+							</ul>
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#fb56c1;" href="#">Belts Scarves & More</a></li>
+							</ul>
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#fb56c1;" href="#">Jewellery</a></li>
+								<li ><a class="categories-top-menu" href="#">Fashion Jewellery</a></li>
+								<li ><a class="categories-top-menu" href="#">Fine Jewellery</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2"></div>
+
+					</div>
+			</div>
+			<!-- Women Menu Categories end-->
+			
+			<!-- kids Menu Categories Start -->
+			<!-- ng-show="kids_menu_div" ng-mouseover="kids_open()" ng-mouseleave="kids_close()" -->
+			<div  class="menu-categories-show-hide container drop-menu-container" ng-show="kids_menu_div" ng-mouseover="kids_open()" ng-mouseleave="kids_close()">
+					<div class="row menu-cat" >
+						<br><br>
+						<div class="col-sm-2"></div>
+						<div class="col-sm-2">
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#f26a10;" href="#">Boys Clothing</a></li>
+								<li ><a class="categories-top-menu" href="#">T-Shirts</a></li>
+								<li ><a class="categories-top-menu" href="#">Shirts</a></li>
+								<li ><a class="categories-top-menu" href="#">Jeans & Trousers</a></li>
+								<li ><a class="categories-top-menu" href="#">Shorts & Dungarees</a></li>
+								<li ><a class="categories-top-menu" href="#">Track Pants & Pyjamas</a></li>
+								<li ><a class="categories-top-menu" href="#">Clothing Sets</a></li>
+								<li ><a class="categories-top-menu" href="#">Indian Wear</a></li>
+								<li ><a class="categories-top-menu" href="#">Sweaters, Sweatshirts & Jackets</a></li>
+								<li ><a class="categories-top-menu" href="#">Rompers & Sleepwear</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#f26a10;" href="#">Girls Clothing</a></li>
+								<li ><a class="categories-top-menu" href="#">Dresses</a></li>
+								<li ><a class="categories-top-menu" href="#">Tops & T-Shirts</a></li>
+								<li ><a class="categories-top-menu" href="#">Clothing Sets</a></li>
+								<li ><a class="categories-top-menu" href="#">Indian Wear</a></li>
+								<li ><a class="categories-top-menu" href="#">Skirts, Shorts & Jumpsuits</a></li>
+								<li ><a class="categories-top-menu" href="#">Tights & Leggings</a></li>
+								<li ><a class="categories-top-menu" href="#">Jeans, Trousers & Capris</a></li>
+								<li ><a class="categories-top-menu" href="#">Track Pants</a></li>
+								<li ><a class="categories-top-menu" href="#">Sweaters, Sweatshirts & Jackets</a></li>
+								<li ><a class="categories-top-menu" href="#">Rompers & Sleepwear</a></li>
+							</ul>
+							
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#f26a10;" href="#">Boys Footwear</a></li>
+								<li ><a class="categories-top-menu" href="#">Casual Shoes</a></li>
+								<li ><a class="categories-top-menu" href="#">Sports Shoes</a></li>
+								<li ><a class="categories-top-menu" href="#">Sandals</a></li>
+								<li ><a class="categories-top-menu" href="#">Flip flops</a></li>			
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#f26a10;" href="#">Girls Footwear</a></li>
+								<li ><a class="categories-top-menu" href="#">Casual Shoes</a></li>
+								<li ><a class="categories-top-menu" href="#">Flats</a></li>
+								<li ><a class="categories-top-menu" href="#">Heels</a></li>
+								<li ><a class="categories-top-menu" href="#">Sports Shoes</a></li>
+								<li ><a class="categories-top-menu" href="#">Flip flops</a></li>
+								<li ><a class="categories-top-menu" href="#">Sandals</a></li>
+							</ul>
+							
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#f26a10;" href="#">Kids Accessories</a></li>
+								<li ><a class="categories-top-menu" href="#">Bags & Backpacks</a></li>
+								<li ><a class="categories-top-menu" href="#">Watches</a></li>
+								<li ><a class="categories-top-menu" href="#">Jewellery</a></li>
+								<li ><a class="categories-top-menu" href="#">Hair Accessories</a></li>
+								<li ><a class="categories-top-menu" href="#">Sunglasses</a></li>
+								<li ><a class="categories-top-menu" href="#">Frames</a></li>
+							</ul>                                           
+						</div>
+						<div class="col-sm-2">
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#f26a10;" href="#">Brands</a></li>
+								<li ><a class="categories-top-menu" href="#">Mothercare</a></li>
+								<li ><a class="categories-top-menu" href="#">Gini and Jony</a></li>
+								<li ><a class="categories-top-menu" href="#">U.S. Polo Assn. Kids</a></li>
+								<li ><a class="categories-top-menu" href="#">United Colors of Benetton</a></li>
+								<li ><a class="categories-top-menu" href="#">YK</a></li>
+								<li ><a class="categories-top-menu" href="#">Allen Solly Junior</a></li>
+								<li ><a class="categories-top-menu" href="#">Next</a></li>
+								<li ><a class="categories-top-menu" href="#">Pepe Jeans</a></li>
+								<li ><a class="categories-top-menu" href="#">Tommy Hilfiger</a></li>
+								<li ><a class="categories-top-menu" href="#">612 League</a></li>
+							</ul>
+							
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#f26a10;" href="#">Toys</a></li>				
+								<li ><a class="categories-top-menu" href="#">Action Figures & Soft Toys</a></li>
+								<li ><a class="categories-top-menu" href="#">Learning & Development Toys</a></li>
+								<li ><a class="categories-top-menu" href="#">Toy Vehicles</a></li>
+								<li ><a class="categories-top-menu" href="#">Activity & Construction Toys</a></li>
+								<li ><a class="categories-top-menu" href="#">Musical Toys & Ride Ons</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2"></div>
+
+					</div>	
+			</div>
+			<!-- kids Menu Categories end -->
+			<!-- home&leaving Menu Categories start -->
+			<!-- ng-show="kids_menu_div" ng-mouseover="kids_open()" ng-mouseleave="kids_close()" -->
+				<div  class="menu-categories-show-hide container drop-menu-container" ng-show="home_and_living_menu_div" ng-mouseover="home_and_living_open()" ng-mouseleave="home_and_living_close()" >
+					<div class="row menu-cat" >
+						<br><br>
+						<div class="col-sm-2"></div>
+						<div class="col-sm-2">
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#f2c210;" href="#">Bed Linen & Furnishing</a></li>
+								<li ><a class="categories-top-menu" href="#">Bedsheets</a></li>
+								<li ><a class="categories-top-menu" href="#">Bedding Sets</a></li>
+								<li ><a class="categories-top-menu" href="#">Blankets Quilts and Dohars</a></li>
+								<li ><a class="categories-top-menu" href="#">Pillows & Pillow Covers</a></li>
+								<li ><a class="categories-top-menu" href="#">Bed Covers</a></li>
+							</ul>
+							
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#f2c210;" href="#">Bath</a></li>
+								<li ><a class="categories-top-menu" href="#">Bath Towels</a></li>
+								<li ><a class="categories-top-menu" href="#">Hand and Face Towels</a></li>
+								<li ><a class="categories-top-menu" href="#">Beach Towels</a></li>
+								<li ><a class="categories-top-menu" href="#">Towels Set</a></li>
+								<li ><a class="categories-top-menu" href="#">Bath Rugs</a></li>
+								<li ><a class="categories-top-menu" href="#">Bath Robes</a></li>
+								<li ><a class="categories-top-menu" href="#">Bathroom Accessories</a></li>
+							</ul>
+							
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#f2c210;" href="#">Curtains</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#f2c210;" href="#">Cushions & Cushion Covers</a></li>
+							</ul>
+							
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#f2c210;" href="#">Flooring</a></li>
+								<li ><a class="categories-top-menu" href="#">Carpets</a></li>
+								<li ><a class="categories-top-menu" href="#">Floor Mats and Dhurries</a></li>
+								<li ><a class="categories-top-menu" href="#">Door Mats</a></li>
+							</ul>                                            
+							
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#f2c210;" href="#">Kitchen & Table</a></li>
+								<li ><a class="categories-top-menu" href="#">Tableware & Serveware</a></li>
+								<li ><a class="categories-top-menu" href="#">Cookware & Kitchen Tools</a></li>
+								<li ><a class="categories-top-menu" href="#">Kitchen Storage</a></li>
+								<li ><a class="categories-top-menu" href="#">Table Covers & Furnishings</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#f2c210;" href="#">Home Décor</a></li>
+								<li ><a class="categories-top-menu" href="#">Plants & Planters</a></li>
+								<li ><a class="categories-top-menu" href="#">Aromas, Candles & Candle Holders</a></li>
+								<li ><a class="categories-top-menu" href="#">Clocks</a></li>
+								<li ><a class="categories-top-menu" href="#">Mirrors</a></li>
+								<li ><a class="categories-top-menu" href="#">Wall Décor</a></li>
+								<li ><a class="categories-top-menu" href="#">Wall Shelves</a></li>
+								<li ><a class="categories-top-menu" href="#">Fountains</a></li>
+								<li ><a class="categories-top-menu" href="#">Showpieces & Vases</a></li>
+							</ul>
+							
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#f2c210;" href="#">Lamps And Lighting</a></li>
+								<li ><a class="categories-top-menu" href="#">Floor lamps</a></li>
+								<li ><a class="categories-top-menu" href="#">Table lamps</a></li>
+								<li ><a class="categories-top-menu" href="#">Wall lamps</a></li>
+							</ul>
+							
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#f2c210;" href="#">Storage</a></li>
+								<li ><a class="categories-top-menu" href="#">Organisers</a></li>
+								<li ><a class="categories-top-menu" href="#">Hooks & Holders</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<ul>
+								<li ><a class="categories-top-menu cat-label" style="font-weight:bold; color:#f2c210;" href="#">Brands</a></li>
+								<li ><a class="categories-top-menu" href="#">Bombay Dyeing</a></li>
+								<li ><a class="categories-top-menu" href="#">Spaces</a></li>
+								<li ><a class="categories-top-menu" href="#">Portico New York</a></li>
+								<li ><a class="categories-top-menu" href="#">Pure Home & Living</a></li>
+								<li ><a class="categories-top-menu" href="#">Swayam</a></li>
+								<li ><a class="categories-top-menu" href="#">Raymond Home</a></li>
+								<li ><a class="categories-top-menu" href="#">At Home by Nilkamal</a></li>
+								<li ><a class="categories-top-menu" href="#">Corelle</a></li>
+								<li ><a class="categories-top-menu" href="#">Trident</a></li>
+								<li ><a class="categories-top-menu" href="#">Cortina</a></li>
+								<li ><a class="categories-top-menu" href="#">WELHOME</a></li>
+								<li ><a class="categories-top-menu" href="#">Random</a></li>
+								<li ><a class="categories-top-menu" href="#">Home sparkle</a></li>
+								<li ><a class="categories-top-menu" href="#">Tangerine</a></li>
+								<li ><a class="categories-top-menu" href="#">Sej by Nisha Gupta</a></li>
+								<li ><a class="categories-top-menu" href="#">House This</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2"></div>
+					</div>
+				</div>			
+			
+			<!-- home&leaving Menu Categories end -->
+			
+				
+		</div>
+<!-------------------- myCtrl end------------------------------------------->
+		<br>
+		<br>
+		<br>
+		<br>
+		<!-- Main body Starts -->
+		<div class="container-fluid main-container">
+			<div class="row">
+				<div class="col-sm-12 banner-div" >
+					<img src="images/main-banner.jpg" class="img-responsive" style="height:auto;width:100%;">
+					<a href="#men"> <div class="men-side img-responsive">  </div></a>
+					<a href="#women"> <div class="women-side img-responsive"> </div> </a>
+					
+				</div><!-- Banner-end-->
+			
+				<!-- offer_sale -->
+				<div class="col-sm-12">
+					<a href="#"> <img class="img-responsive" style="height:auto; width:100%" src="images/sale1.jpg"> </a>
+				</div>
+				<!-- Pay/Sbi offer -->
+				<div class="col-sm-12">
+					<a href="#"> <img class="img-responsive" style="height:auto; width:100%" src="images/sbi.jpg"> </a>
+				</div>
+				<!-- offer_sale -->
+				<div class="col-sm-12">
+					<a href="#"> <img class="img-responsive" style="height:auto; width:100%" src="images/sale.jpg"> </a>
+				</div>
+				<!-- quick_cash1 -->
+				<div class="col-sm-12">
+					<a href="#"> <img class="img-responsive" style="height:auto; width:100%" src="images/quick_cash.jpg"> </a>
+				</div>
+				<!-- Brand Name -->
+				<div class="col-sm-12">
+					<a href="#"> <img class="img-responsive" style="height:auto; width:100%" src="images/brand.jpg"> </a>
+				</div>
+				<!-- Brands image -->
+				<div class="col-sm-12" style="padding-left:30px; padding-right:30px;"  >
+					
+					<div class=" row brand-div">	
+						<div class="col-sm-1 zero_size"></div> 
+						<div class="col-sm-2 brand-image">
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/nike.jpg"> </a>
+						</div>                                                     
+						<div class="col-sm-2 brand-image">                                     
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/united.jpg"> </a>
+						</div>                                  
+						<div class="col-sm-2 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/theroadster.jpg"> </a>
+						</div>                                  
+						<div class="col-sm-2 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/maet_harbar.jpg"> </a>
+						</div>                                  
+						<div class="col-sm-2 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/us_polo.jpg"> </a>
+						</div>                       
+						<div class="col-sm-1 zero_size"></div> 
+					</div>                                      
+					<div class=" row brand-div">     
+						<div class="col-sm-1 zero_size"></div> 
+						<div class="col-sm-2 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/puma.jpg"> </a>
+						</div>                                  
+						<div class="col-sm-2 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/jackjones.jpg"> </a>
+						</div>                                  
+						<div class="col-sm-2 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/veromoda.jpg"> </a>
+						</div>                                  
+						<div class="col-sm-2 brand-image">                              
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/hrx.jpg"> </a>
+						</div>                                              
+						<div class="col-sm-2 brand-image">                              
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/levis.jpg"> </a>
+						</div>                       
+						<div class="col-sm-1 zero_size"></div> 
+					</div>                                      
+					<div class="row brand-div">
+						
+						<div class="col-sm-1 zero_size"></div>                  
+						<div class="col-sm-2 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/w.jpg"> </a>
+						</div>                                  
+						<div class="col-sm-2 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/redtape.jpg"> </a>
+						</div>                                  
+						<div class="col-sm-2 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/danielklein.jpg"> </a>
+						</div>                                  
+						<div class="col-sm-2 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/lavie.jpg"> </a>
+						</div>                                  
+						<div class="col-sm-2 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/mango.jpg"> </a>
+						</div>
+						<div class="col-sm-1 zero_size"></div> 
+					</div>
+				</div>
+				<!-- quick_cash  -->
+				<div class="col-sm-12">
+					<a href="#"> <img class="img-responsive" style="height:auto; width:100%" src="images/quick_cash2.jpg"> </a>
+				</div>
+				<!-- offer sale -->
+				<div class="col-sm-12 banner-div" >
+					<img src="images/offer_sale.jpg" class="img-responsive" style="height:auto;width:100%;">
+					<a href="mens_shopping.html"> <div class="women-side img-responsive" style="right: 16px;" > </div> </a>
+					<a href="women_shopping.html"> <div class="men-side img-responsive" style="left: 16px;">  </div></a>
+				</div>
+				<!-- Shop By Categories -->
+				<div class="col-sm-12">
+					<a href="#"> <img class="img-responsive" style="height:auto; width:100%" src="images/shop_by_category.jpg"> </a>
+				</div>
+				<!-- Shop By Categories Images -->
+				<div class="col-sm-12"style="padding-left:30px; padding-right:30px;">
+					<div class="row brand-div">
+					
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/women-west.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/men_casual.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/sport.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/women_ethnic.jpg"> </a>
+						</div>
+						
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/men_ethnic.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/men_foot.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/women_foot.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/watches.jpg"> </a>
+						</div>
+						
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/sunglasses.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/kids.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/bags.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/hand_bags.jpg"> </a>
+						</div>
+						
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/men_formal.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/women_formal.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/home.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/jewellery.jpg"> </a>
+						</div>
+						
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/personal_care.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/hearables.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/innerwear.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/lingerie.jpg"> </a>
+						</div>
+					</div> <!--shop_by_category row ends -->
+				</div><!--shop_by_category container ends -->
+				
+					<!--myntra_recomanded-->
+					<div class="col-sm-12">
+						<a href="#"> <img class="img-responsive" style="height:auto; width:100%" src="images/myntra_recomanded.jpg"> </a>
+					</div>
+					<!--myntra_recomanded images-->
+					<div class="col-sm-12"style="padding-left:30px; padding-right:30px;">
+					<div class="row brand-div">
+					
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/shirts.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/topwear.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/t_shirts.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/dresses.jpg"> </a>
+						</div>
+						
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/kurtas.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/shoes.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/women_shoes.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/accessories.jpg"> </a>
+						</div>
+						
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/accessories2.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/bags2.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/beauti_finds.jpg"> </a>
+						</div>
+						<div class="col-sm-3 brand-image">                  
+							<a href="#"> <img class="img-responsive" style=" width:100%" src="images/home_and_decor.jpg"> </a>
+						</div>
+					</div><!--myntra_recomanded row images-->
+				</div>	<!--myntra_recomanded container images-->
+				
+			</div> <!-- main row End -->
+		</div>
+			<!-- main container End -->
+		<footer style=" padding-bottom:50px; background-color:#fafbfc">	
+			<br>
+			<br>
+		<div class="container">
+				<div class="row">
+					<div class="col-sm-2 menu-cat">
+						<ul>
+							<li ><a class="categories-top-menu cat-label" style="font-weight:bold;" href="#">ONLINE SHOPPING</a></li>
+							<li ><label class="categories-top-menu" href="#"> </label></li>
+							<li ><label class="categories-top-menu" href="#"> </label></li>
+							<li class=" bottom-menu" ><a class="categories-top-menu" href="mens_shopping.html">Men</a></li>
+							<li class=" bottom-menu" ><a class="categories-top-menu" href="women_shopping.html">Women</a></li>
+							<li class=" bottom-menu" ><a class="categories-top-menu" href="kids_shopping.html">kids</a></li>
+							<li class=" bottom-menu" ><a class="categories-top-menu" href="home_leaving_shopping.html">home & Living</a></li>
+							<li class=" bottom-menu" ><a class="categories-top-menu" href="#"><!--  6 -->Gift Cards
+						<span class="desktop-superscriptTag" data-reactid="7"> New </span></a></li>
+						</ul>
+					</div>
+					<div class="col-sm-2 menu-cat">
+						<ul>
+							<li ><a class="categories-top-menu cat-label" style="font-weight:bold;" href="#">USEFUL LINKS</a></li>
+							<li ><label class="categories-top-menu" href="#"> </label></li>
+							<li ><label class="categories-top-menu" href="#"> </label></li>
+							<li class=" bottom-menu" ><a class="categories-top-menu" href="#">FAQ</a></li>
+							<li class=" bottom-menu" ><a class="categories-top-menu" href="#">T&C</a></li>
+							<li class=" bottom-menu" ><a class="categories-top-menu" href="#">Terms Of Use</a></li>
+							<li class=" bottom-menu" ><a class="categories-top-menu" href="#">Track Orders</a></li>
+							<li class=" bottom-menu" ><a class="categories-top-menu" href="#">Shipping</a></li>
+							<li class=" bottom-menu" ><a class="categories-top-menu" href="#">Cancellation</a></li>
+							<li class=" bottom-menu" ><a class="categories-top-menu" href="#">Returns</a></li>
+							<li class=" bottom-menu" ><a class="categories-top-menu" href="#">Whitehat</a></li>
+							<li class=" bottom-menu" ><a class="categories-top-menu" href="#">Blog</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-5 menu-cat">
+						<ul>
+							<li ><a class="categories-top-menu cat-label" style="font-weight:bold;" href="#">EXPERIENCE MYNTRA APP ON MOBILE</a></li>
+							<li ><label class="categories-top-menu" href="#"> </label></li>
+							<li ><label class="categories-top-menu" href="#"> </label></li>
+						<a href="#google"><img class="img-responsive" style="height:50px; width:120px;display:inline" src="images/google.png"></a>
+						<a href="#google"><img class="img-responsive" style="height:50px; width:120px;display:inline" src="images/apple.png"></a>
+						</ul>
+						
+						<ul>
+							<li ><a class="categories-top-menu cat-label" style="font-weight:bold;" href="#">KEEP IN TOUCH</a></li>
+							<li ><label class="categories-top-menu" href="#"> </label></li>
+							<li ><label class="categories-top-menu" href="#"> </label></li>
+						<a href="#google"><i class="fa fa-facebook-official fa-2x" aria-hidden="true">  </i>  </a>
+						<a href="#apple"><i class="fa fa-twitter fa-2x" aria-hidden="true">  </i>  </a>
+						<a href="#apple"><i class="fa fa-youtube-play fa-2x" aria-hidden="true">  </i>  </a>
+						<a href="#apple"><i class="fa fa-instagram fa-2x" aria-hidden="true">  </i>  </a>
+						</ul>
+					</div>
+					<div class="col-sm-3">
+						<img src="images/original.png" style="height:40px; width:47px; float:left;">
+						<div style="font-size: 16px;">
+							<strong style="color: #282C3F;  font-weight: bold;">100% ORIGINAL </strong>
+							<!--  85 --> 
+							guarantee for all products at myntra.com 
+							
+						</div>
+						<br>
+						<br>
+						<img src="images/30_days.png" style="height:40px; width:47px; float:left;">
+						<div style="font-size: 16px;">
+							<strong style="color: #282C3F;  font-weight: bold;">Return within 30days  </strong>
+							<!--  85 --> 
+							of placing your order 
+							
+						</div>
+						<br>
+						<br>
+						<img src="images/truck.png" style="height:40px; width:47px; float:left;">
+						<div style="font-size: 16px;">
+							<strong style="color: #282C3F;  font-weight: bold;">Get free delivery  </strong>
+							<!--  85 --> 
+							for every order above Rs.
+							
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<hr>
+						<div class="popular_search">
+							 POPULAR SEARCHES 
+						</div>
+						<div class="popular_search_links">
+							
+							<a href="#makeup">	Makeup </a>
+							<a href="#girls-dresses">Dresses For Girls</a>
+							<a href="#tshirts">T-Shirts</a>
+							<a href="#sandals">Sandals</a>
+							<a href="#headphones">Headphones</a>
+							<a href="#baby-dolls">Baby Dolls</a>
+							<a href="#men-blazers">Blazers For Men</a>
+							<a href="#handbags">Handbags</a>
+							<a href="#women-watches">Ladies Watches</a>
+							<a href="#one-piece-dresses">One Piece Dress</a>
+							<a href="#bags">Bags</a>
+							<a href="#sports-shoes">Sport Shoes</a>
+							<a href="#reebok-shoes">Reebok Shoes</a>
+							<a href="#puma-shoes">Puma Shoes</a>
+							<a href="#men-boxers">Boxers</a>
+							<a href="#wallets">Wallets</a>
+							<a href="#women-shirts-tops-tees">Tops</a>
+							<a href="#earrings">Earrings</a>
+							<a href="#fastrack-watches">Fastrack Watches</a>
+							<a href="#women-kurtas-kurtis-suits">Kurtis</a>
+							<a href="#">Nike</a>
+							<a href="#">Smart Watches  </a>
+							<a href="#">Titan Watches  </a>
+							<a href="#">Designer Blouse  </a>
+							<a href="#">Gowns Rings  </a>
+							<a href="#">Shoes For Men  </a>
+							<a href="#">Forever 21  Toys </a>
+							<a href="#">Photo Frames  </a>
+							<a href="#">Punjabi Suits  </a>
+							<a href="#">Bikini  </a>
+							<a href="#">Lipstick  </a>
+							<a href="#">Saree  </a>
+							<a href="#">Watches  </a>
+							<a href="#">Dresses  </a>
+							<a href="#">Lehenga  </a>
+							<a href="#">Nike Shoes  </a>
+							<a href="#">Goggles  </a>
+							<a href="#">Bras </a>
+							<a href="#">Suit  </a>
+							<a href="#">Chinos  Shoes  </a>
+							<a href="#">Adidas Shoes  </a>
+							<a href="#">Woodland Shoes  </a>
+							<a href="#">Jewellery  </a>
+							<a href="#">Designers Sarees </a>
+					</div>
+					<div class="contact-div">
+						In case of any concern, <a href="#contactus"> Contact Us </a>
+					</div>
+					<div class="copywrite contact-div">
+						© 2018 www.myntra.com. All rights reserved.
+					</div>
+					<div class="clear-div"></div>
+					<address class="address-div contact-div">
+						<p class="address-header"> Registered Office Address </p>
+						<div class="adddress-container">
+							<div class="address-address">
+								3rd Floor, A Block, <br>
+								AKR Tech Park, 7th Mile, <br>
+								Krishna Reddy Industrial Area, <br>
+								Kudlu Gate, <br>
+								Bangalore – 560068 <br>
+							</div>
+							<div class="cin-telephone">
+								<br>
+								<br>
+								<p> CIN: U72300KA2007PTC041799 </p>
+								<p>Telephone:
+									<a href="#tel:+918061561999" class="index-lcTelephone index-highlightText">
+										+91-80-61561999
+									</a>
+								</p>
+							</div>
+						</div>
+					</address>
+					<div class= "clear-div"></div>
+					<hr>
+					<div class="about-details">
+					<strong>ONLINE SHOPPING MADE EASY AT MYNTRA </strong>
+						<p> 
+							We have all planned our trips to the clothing store in advance, vividly dreaming about what we would buy once 
+							there. Some of us even have sales assistants for friends and have often asked them for a favour or two during peak 
+							shopping season (read: festivals and sales). But what we can all admit to is that we have always wished it was 
+							easier than to go down to the store in dense traffic, navigating through throngs of fashionistas, all vying for the 
+							same trendy clothing items, waiting in line to try on our top picks in the trial rooms, etc. 
+						</p>
+						
+						<p>
+							Well, you can do all this from the comfort of your home while enjoying many online shopping benefits, right from 
+							irresistible deals and discounts to a robust user interface with many shopping filters (based on various categories 
+								of clothing, brands, budget, etc.). to make your shopping experience truly hassle free. Myntra, THE place to be 
+							when it comes to the latest in fashion, offers you fine, high-quality merchandise – go ahead and indulge in a bit of 
+							shopping online for men, women and kids. You can even pick up gift sets for your near and dear ones while being 
+							absolutely certain that it will put a smile on their faces. Go ahead and shop till you drop on India’s largest online 
+							fashion store. 
+						</p>
+						<br>
+						
+						<strong>ALL THE LATEST TRENDS UNDER ONE ROOF </strong>
+						<p> 
+							Haven’t we all wondered where we could get our favourite celebrity or fashion icons’ latest looks? Sure, 
+							they have an entourage of personal stylists, makeup artists and hair dressers to look the way they do but with 
+							Myntra, you will understand that you do not have to spend a fortune to look great. There is something for the 
+							whole family and you can engage in <a href="/shop/women" class="seolink">online shopping for women</a>, men and kids. 
+							Choose from the widest spread of western wear, traditional <a href="/clothing" class="seolink">clothing</a>, casual wear,
+							lounge or sleep wear, sports or active wear, formal wear, <a href="/lingerie" class="seolink">lingerie</a>
+							and more in the clothing section. Footwear of numerous kinds, watches, sunglasses, bags, jewellery, scarves and 
+							stoles, <a href="/women-beauty" class="seolink">beauty</a>, skin and hair care products, <a href="/perfumes" class="seoLink">fragrances</a>, and so much 
+							more are just some of the other items you can grab hold of here. 
+						</p>
+						<br>
+						
+						<strong>Online shopping for Kids </strong>
+						<p> 
+							We, at Myntra, have all that you need to spruce up your fashion quotient of your Kids.  They get to look extra 
+							cute with clothing by top brands like UFO, Lilliput, Cutecumber, Chhota Bheem, WROGN for Tweens, Sweet Angel, Spiderman, etc. 
+						</p>
+						<br>
+						
+						<strong>Convenient shopping for Home Decor &amp; Furnishing </strong>
+						<p> 
+							Shop online for Home décor and furnishing, including bedding, rugs and mats, kitchenware, <a href="/curtains" class="seoLink">curtains</a>, 
+							lamps, paintings, and more. 
+							This will help you set up your home the way you envisioned, conveniently from your home. 
+						</p>
+						<br>	
+							
+						<strong>Shop online for your Favourite International Brands &amp; Celebrity brands </strong>
+						<p>
+							Whether it is clothing, <a href="/footwear" class="seoLink">footwear</a>, <a href="/jewellery" class="seoLink">jewelry</a>, 
+							accessories and cosmetics, we showcase the most elite brands in the world. Tommy Hilfiger,
+							Forever 21, Vero Moda, FabAlley, All About You by Deepika Padukone, Adidas, Puma, Reebok, Burberry, French Connection, Calvin Klein, 
+							HRX by Hrithik Roshan, Arrow, United Colors of Benetton, Esprit, Bombay Dyeing, Forest Essentials, L’Oréal Paris, M.A.C, Bobbi Brown,
+							and thousands of other national and international, budget-friendly as well as luxury brands await you with products that you just
+							cannot turn down. 
+						</p>
+						<br>
+						
+						<strong>Avail added online shopping benefits  </strong>
+						<p>
+							Make sure to use our card or cash on delivery option, easy 30-day returns policy, try and buy option (for select products), and other
+							customer-friendly features. A comprehensive sizing guide and detailed product descriptions coupled with high-resolution product 
+							shots will give you all the information to make the right buying decision.
+						</p>
+						<p>
+							You just need to pay for the product, while we ensure free shipping on almost everything. You can also buy gifts for your loved ones 
+							and avail our special gift-wrap facility at a nominal cost on Myntra.
+						</p>
+						<p>
+							Give your wardrobe an upgrade with stylish clothing – head to Myntra.com for a great online fashion shopping experience now!
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		</footer>
+	</body>
+</html>
+
+
